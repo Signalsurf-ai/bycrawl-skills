@@ -1,15 +1,6 @@
 ---
 name: bycrawl-docs
-description: |
-  Fetch the latest ByCrawl API documentation from bycrawl.com. ByCrawl is a unified social media data API supporting Threads, Instagram, Facebook, X/Twitter, Reddit, TikTok, LinkedIn, YouTube, Dcard, and Job104.
-
-  USE THIS SKILL WHEN:
-  - User asks about ByCrawl API usage, endpoints, or SDK
-  - User wants to check the latest ByCrawl docs
-  - User is building with the ByCrawl API or Python SDK
-  - User mentions bycrawl, social media scraping API, or @bycrawl/mcp
-  - User needs API reference for a specific platform (threads, instagram, facebook, x, reddit, tiktok, linkedin, youtube, dcard, job104)
-  - User asks about bycrawl error codes, rate limits, or changelog
+description: "Fetch the latest ByCrawl API documentation from bycrawl.com. Use when working with ByCrawl API, Python SDK, or needing API reference for Threads, Instagram, Facebook, X/Twitter, Reddit, TikTok, LinkedIn, YouTube, Dcard, Job104."
 allowed-tools:
   - WebFetch
 user-invocable: true
