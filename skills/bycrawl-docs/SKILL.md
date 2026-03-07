@@ -1,10 +1,9 @@
 ---
 name: bycrawl-docs
 description: "Fetch the latest ByCrawl API documentation from bycrawl.com. Use when working with ByCrawl API, Python SDK, or needing API reference for Threads, Instagram, Facebook, X/Twitter, Reddit, TikTok, LinkedIn, YouTube, Dcard, Job104."
-allowed-tools:
-  - WebFetch
+allowed-tools: ["WebFetch"]
 user-invocable: true
-argument-hint: [section] e.g. threads, python-sdk, getting-started
+argument-hint: "<section> e.g. threads, python-sdk, getting-started"
 ---
 
 # ByCrawl Documentation Fetcher
