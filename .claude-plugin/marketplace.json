@@ -1,0 +1,16 @@
+{
+  "name": "bycrawl-skills",
+  "owner": {
+    "name": "Signalsurf-ai"
+  },
+  "plugins": [
+    {
+      "name": "bycrawl",
+      "source": "./",
+      "description": "Fetch the latest ByCrawl API documentation from bycrawl.com.",
+      "skills": [
+        "./skills/bycrawl-docs"
+      ]
+    }
+  ]
+}

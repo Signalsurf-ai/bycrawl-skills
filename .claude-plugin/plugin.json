@@ -1,0 +1,20 @@
+{
+  "name": "bycrawl",
+  "description": "Fetch the latest ByCrawl API documentation. Gives Claude Code real-time access to bycrawl.com docs for API endpoints, Python SDK, and platform references.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Signalsurf-ai"
+  },
+  "repository": "https://github.com/Signalsurf-ai/bycrawl-skills",
+  "license": "MIT",
+  "skills": [
+    "./skills/bycrawl-docs"
+  ],
+  "keywords": [
+    "bycrawl",
+    "social-media",
+    "api",
+    "documentation",
+    "scraping"
+  ]
+}
