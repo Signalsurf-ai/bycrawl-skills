@@ -10,8 +10,17 @@ Claude Code skill for fetching the latest ByCrawl API documentation from [bycraw
 
 ## Installation
 
+### Via Plugin Marketplace (recommended)
+
+```shell
+/plugin marketplace add Signalsurf-ai/bycrawl-skills
+/plugin install bycrawl@bycrawl-skills
+```
+
+### Via npx skills
+
 ```bash
-npx skills add -g Signalsurf-ai/bycrawl-skills
+npx skills add Signalsurf-ai/bycrawl-skills
 ```
 
 ## Usage
