@@ -18,6 +18,9 @@ Claude Code skills for ByCrawl — social media intelligence, brand monitoring, 
 | bycrawl-talent-sourcing | `/bycrawl-talent-sourcing` | Source candidates or check employer brand |
 | bycrawl-prospect-dossier | `/bycrawl-prospect-dossier` | Build a full profile for meeting prep |
 | bycrawl-viral-reverse-engineer | `/bycrawl-viral-reverse-engineer` | Deconstruct why content went viral |
+| bycrawl-company-sourcing | `/bycrawl-company-sourcing` | Find acquisition targets matching a thesis |
+| bycrawl-acquisition-target-qualify | `/bycrawl-acquisition-target-qualify` | Deep qualification of a company for M&A |
+| bycrawl-deal-outreach-personalize | `/bycrawl-deal-outreach-personalize` | Personalized M&A outreach to business owners |
 
 ## Installation
 
@@ -56,6 +59,10 @@ npx skills add Signalsurf-ai/bycrawl-skills
 /bycrawl-talent-sourcing
 /bycrawl-prospect-dossier
 /bycrawl-viral-reverse-engineer
+
+/bycrawl-company-sourcing
+/bycrawl-acquisition-target-qualify
+/bycrawl-deal-outreach-personalize
 ```
 
 The skill auto-triggers when Claude detects you're working with the ByCrawl API.
@@ -90,6 +97,12 @@ bycrawl-skills/
     │   └── SKILL.md
     ├── bycrawl-talent-sourcing/
     │   └── SKILL.md
-    └── bycrawl-viral-reverse-engineer/
+    ├── bycrawl-viral-reverse-engineer/
+    │   └── SKILL.md
+    ├── bycrawl-company-sourcing/
+    │   └── SKILL.md
+    ├── bycrawl-acquisition-target-qualify/
+    │   └── SKILL.md
+    └── bycrawl-deal-outreach-personalize/
         └── SKILL.md
 ```
