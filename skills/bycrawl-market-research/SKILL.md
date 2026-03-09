@@ -5,6 +5,9 @@ description: >
   Use when user says "market research", "product-market fit", "validate my idea",
   "is there demand for", "what do people think about [category]",
   "market sentiment", "TAM research from social", "customer discovery".
+allowed-tools: ["mcp_bycrawl_*"]
+user-invocable: true
+argument-hint: "<product_or_category> [target_audience] e.g. AI writing tool, content marketers"
 ---
 
 # Market Research
@@ -22,6 +25,16 @@ Validates product-market fit by searching for real user demand signals, pain poi
 - **Product idea or category** (required): What to validate
 - **Target audience** (optional): Who would use it
 - **Known alternatives** (optional): Existing solutions to compare against
+
+
+## Prerequisites
+
+- **ByCrawl MCP server** must be installed and configured. If MCP tools are not available, install with:
+  ```
+  npx @anthropic-ai/claude-code mcp add bycrawl -- npx @bycrawl/mcp
+  ```
+- **ByCrawl API key** set as environment variable: `export BYCRAWL_API_KEY=sk_byc_...`
+- Get your API key at [bycrawl.com](https://bycrawl.com)
 
 ## Workflow
 
@@ -113,3 +126,17 @@ Instagram hashtag volume = consumer awareness.
 - Differentiate on: {what competitors miss}
 - Price at: {suggested range based on signals}
 ```
+
+## Error Handling
+
+- If a platform returns **empty results**, skip it and note "No data found on {platform}" in the report — do not fail the entire workflow.
+- If the **API key is missing or invalid**, stop and instruct the user: set `BYCRAWL_API_KEY` environment variable with a valid key from [bycrawl.com](https://bycrawl.com).
+- If a **rate limit** is hit, reduce `count` parameters by half and retry once.
+- If a specific **MCP tool is unavailable**, check that the ByCrawl MCP server is installed (`npx @bycrawl/mcp`).
+- **Always deliver partial results** rather than failing entirely — a report covering 5 of 7 platforms is still valuable.
+
+## Estimated API Usage
+
+- **Basic run**: ~15-20 API calls
+- **Full run**: ~30-35 with audience profiling API calls
+- Each API call consumes 1 ByCrawl credit. Reduce `count` parameters for cost-sensitive usage.

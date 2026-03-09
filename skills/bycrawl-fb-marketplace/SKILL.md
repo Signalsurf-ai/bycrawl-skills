@@ -3,7 +3,7 @@ name: bycrawl-fb-marketplace
 description: "Search and analyze any product on Facebook Marketplace. Find deals, compare prices, and get market trends for electronics, furniture, vehicles, clothing, and more using ByCrawl API."
 allowed-tools: ["Bash", "WebFetch"]
 user-invocable: true
-argument-hint: "<keyword> e.g. iPhone 15, IKEA desk, Toyota Corolla, Nike shoes"
+argument-hint: "<keyword> [location] e.g. 'iPhone 15 new-york', 'IKEA desk taipei', 'Toyota Corolla'"
 ---
 
 # FB Marketplace Scout
@@ -19,7 +19,11 @@ Search Facebook Marketplace for any product, analyze pricing trends, and find un
 
 ### 1. Parse user input
 
-The user provides `$ARGUMENTS` — a keyword for the product they want to search.
+The user provides `$ARGUMENTS` — a keyword and optional location for the product they want to search.
+
+Parse `$ARGUMENTS` to extract:
+- **keyword**: The product to search for (required)
+- **location**: City or region (optional, omit the `location` parameter from the API call if not provided)
 
 Example keywords by category:
 - Electronics: iPhone 15, MacBook Pro, Switch OLED, AirPods Pro
@@ -36,9 +40,11 @@ If `$ARGUMENTS` is empty, browse general trending listings.
 Use `Bash` to call the ByCrawl API:
 
 ```bash
-curl -s "https://api.bycrawl.com/facebook/marketplace/search?q={keyword}&location=taipei" \
+curl -s "https://api.bycrawl.com/facebook/marketplace/search?q={keyword}&location={location}" \
   -H "x-api-key: $BYCRAWL_API_KEY" | python3 -m json.tool
 ```
+
+> If the user did not specify a location, omit the `&location=` parameter entirely.
 
 ### 3. Analyze the results
 
@@ -73,9 +79,11 @@ Check for:
 If the user wants to browse a category or general trends:
 
 ```bash
-curl -s "https://api.bycrawl.com/facebook/marketplace/listings?location=taipei" \
+curl -s "https://api.bycrawl.com/facebook/marketplace/listings?location={location}" \
   -H "x-api-key: $BYCRAWL_API_KEY" | python3 -m json.tool
 ```
+
+> If no location was specified, omit the `?location=` parameter.
 
 Optional category filter if the user specifies one (e.g. electronics, furniture, vehicles, apparel).
 
@@ -85,7 +93,7 @@ Present results in this structured format:
 
 ```
 # FB Marketplace Scout — {keyword}
-Location: Taipei | Source: Facebook Marketplace
+Location: {location or "Not specified"} | Source: Facebook Marketplace
 
 ## Market Overview
 - Total listings: X
@@ -117,8 +125,8 @@ Location: Taipei | Source: Facebook Marketplace
 
 ## Notes
 
-- All prices are in USD ($)
-- Default location is Taipei; user can specify other cities
+- All prices are in the local currency of the marketplace location
+- Location is optional; if not specified, results are not filtered by geography
 - Credit cost: 1 credit per search, 1 credit per item detail
 - Deal threshold: listings priced 20%+ below median are flagged
 - Always remind users to meet in safe public places for transactions

@@ -5,6 +5,9 @@ description: >
   Use when user says "why did this go viral", "reverse engineer this post",
   "analyze this viral content", "what makes content go viral in [niche]",
   "viral content analysis", "deconstruct this post", "replicate viral content".
+allowed-tools: ["mcp_bycrawl_*"]
+user-invocable: true
+argument-hint: "<post_url_or_topic> [niche] e.g. https://x.com/... OR AI tools"
 ---
 
 # Viral Content Reverse Engineering
@@ -21,6 +24,16 @@ Takes a viral post (URL or topic) and deconstructs it: analyzes the content stru
 ## Required Input
 - **Viral post URL or topic** (required): A specific post to analyze, or a topic to find viral examples in
 - **Your niche** (optional): To make recommendations specific to your audience
+
+
+## Prerequisites
+
+- **ByCrawl MCP server** must be installed and configured. If MCP tools are not available, install with:
+  ```
+  npx @anthropic-ai/claude-code mcp add bycrawl -- npx @bycrawl/mcp
+  ```
+- **ByCrawl API key** set as environment variable: `export BYCRAWL_API_KEY=sk_byc_...`
+- Get your API key at [bycrawl.com](https://bycrawl.com)
 
 ## Workflow
 
@@ -166,3 +179,17 @@ Compare: engagement on viral post vs average engagement. What changed?
 2. **"{title}"** — {brief outline}
 3. **"{title}"** — {brief outline}
 ```
+
+## Error Handling
+
+- If a platform returns **empty results**, skip it and note "No data found on {platform}" in the report — do not fail the entire workflow.
+- If the **API key is missing or invalid**, stop and instruct the user: set `BYCRAWL_API_KEY` environment variable with a valid key from [bycrawl.com](https://bycrawl.com).
+- If a **rate limit** is hit, reduce `count` parameters by half and retry once.
+- If a specific **MCP tool is unavailable**, check that the ByCrawl MCP server is installed (`npx @bycrawl/mcp`).
+- **Always deliver partial results** rather than failing entirely — a report covering 5 of 7 platforms is still valuable.
+
+## Estimated API Usage
+
+- **Basic run**: ~10-15 (single post) API calls
+- **Full run**: ~30-40 (topic search with pattern matching) API calls
+- Each API call consumes 1 ByCrawl credit. Reduce `count` parameters for cost-sensitive usage.

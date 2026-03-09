@@ -5,6 +5,9 @@ description: >
   Use when user says "content ideas", "content research", "what should I post about",
   "content gap", "trending topics", "video ideas", "blog ideas from social",
   "what questions are people asking about [topic]".
+allowed-tools: ["mcp_bycrawl_*"]
+user-invocable: true
+argument-hint: "<topic> [format] e.g. AI coding tools, video"
 ---
 
 # Content Research
@@ -22,6 +25,16 @@ Mines social platforms for trending content, audience questions, and gaps in exi
 - **Topic or niche** (required): What to research
 - **Content format** (optional): "video", "blog", "social posts", or "all"
 - **Platform focus** (optional): Specific platforms to prioritize
+
+
+## Prerequisites
+
+- **ByCrawl MCP server** must be installed and configured. If MCP tools are not available, install with:
+  ```
+  npx @anthropic-ai/claude-code mcp add bycrawl -- npx @bycrawl/mcp
+  ```
+- **ByCrawl API key** set as environment variable: `export BYCRAWL_API_KEY=sk_byc_...`
+- Get your API key at [bycrawl.com](https://bycrawl.com)
 
 ## Workflow
 
@@ -119,3 +132,17 @@ Identify emerging formats and angles before they saturate.
 - {format_1}: {description}
 - {format_2}: {description}
 ```
+
+## Error Handling
+
+- If a platform returns **empty results**, skip it and note "No data found on {platform}" in the report — do not fail the entire workflow.
+- If the **API key is missing or invalid**, stop and instruct the user: set `BYCRAWL_API_KEY` environment variable with a valid key from [bycrawl.com](https://bycrawl.com).
+- If a **rate limit** is hit, reduce `count` parameters by half and retry once.
+- If a specific **MCP tool is unavailable**, check that the ByCrawl MCP server is installed (`npx @bycrawl/mcp`).
+- **Always deliver partial results** rather than failing entirely — a report covering 5 of 7 platforms is still valuable.
+
+## Estimated API Usage
+
+- **Basic run**: ~15-20 API calls
+- **Full run**: ~30-40 with transcript and comment pulls API calls
+- Each API call consumes 1 ByCrawl credit. Reduce `count` parameters for cost-sensitive usage.

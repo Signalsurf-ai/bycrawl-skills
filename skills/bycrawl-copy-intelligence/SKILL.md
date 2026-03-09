@@ -5,6 +5,9 @@ description: >
   Use when user says "copy research", "what copy works", "find copy angles",
   "audience language research", "social copy mining", "copywriting research",
   "what messaging resonates", "find hooks for [topic]", "文案靈感", "社群文案分析".
+allowed-tools: ["mcp_bycrawl_*"]
+user-invocable: true
+argument-hint: "<topic_or_product> [audience] [copy_type] e.g. protein powder, fitness enthusiasts, ad copy"
 ---
 
 # Copy Intelligence
@@ -23,6 +26,16 @@ Mines social platforms for the exact language, hooks, emotional triggers, and me
 - **Target audience** (optional): Who the copy is for — e.g., "busy moms", "startup founders"
 - **Copy type** (optional): "ad copy", "landing page", "email", "social post", or "all"
 - **Brand voice** (optional): Existing tone to match — e.g., "casual and fun", "professional and authoritative"
+
+
+## Prerequisites
+
+- **ByCrawl MCP server** must be installed and configured. If MCP tools are not available, install with:
+  ```
+  npx @anthropic-ai/claude-code mcp add bycrawl -- npx @bycrawl/mcp
+  ```
+- **ByCrawl API key** set as environment variable: `export BYCRAWL_API_KEY=sk_byc_...`
+- Get your API key at [bycrawl.com](https://bycrawl.com)
 
 ## Workflow
 
@@ -216,3 +229,17 @@ Angles the audience is tired of:
 |------------|----------------|-------------------|---------------------|
 | {brand} | "{their angle}" | {positive/mixed/negative} | {your opportunity} |
 ```
+
+## Error Handling
+
+- If a platform returns **empty results**, skip it and note "No data found on {platform}" in the report — do not fail the entire workflow.
+- If the **API key is missing or invalid**, stop and instruct the user: set `BYCRAWL_API_KEY` environment variable with a valid key from [bycrawl.com](https://bycrawl.com).
+- If a **rate limit** is hit, reduce `count` parameters by half and retry once.
+- If a specific **MCP tool is unavailable**, check that the ByCrawl MCP server is installed (`npx @bycrawl/mcp`).
+- **Always deliver partial results** rather than failing entirely — a report covering 5 of 7 platforms is still valuable.
+
+## Estimated API Usage
+
+- **Basic run**: ~20-25 API calls
+- **Full run**: ~35-45 with competitor audit and UGC mining API calls
+- Each API call consumes 1 ByCrawl credit. Reduce `count` parameters for cost-sensitive usage.

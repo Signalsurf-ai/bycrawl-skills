@@ -7,9 +7,26 @@
     {
       "name": "bycrawl",
       "source": "./",
-      "description": "Fetch the latest ByCrawl API documentation from bycrawl.com.",
+      "description": "Social media intelligence skills for ByCrawl — brand monitoring, competitor analysis, influencer discovery, and more.",
       "skills": [
-        "./skills/bycrawl-docs"
+        "./skills/bycrawl-docs",
+        "./skills/bycrawl-fb-marketplace",
+        "./skills/bycrawl-brand-monitoring",
+        "./skills/bycrawl-competitor-intel",
+        "./skills/bycrawl-influencer-discovery",
+        "./skills/bycrawl-content-research",
+        "./skills/bycrawl-lead-intel",
+        "./skills/bycrawl-crisis-detection",
+        "./skills/bycrawl-market-research",
+        "./skills/bycrawl-talent-sourcing",
+        "./skills/bycrawl-prospect-dossier",
+        "./skills/bycrawl-viral-reverse-engineer",
+        "./skills/bycrawl-company-sourcing",
+        "./skills/bycrawl-acquisition-target-qualify",
+        "./skills/bycrawl-deal-outreach-personalize",
+        "./skills/bycrawl-audience-enrichment",
+        "./skills/bycrawl-social-keyword-signals",
+        "./skills/bycrawl-copy-intelligence"
       ]
     }
   ]

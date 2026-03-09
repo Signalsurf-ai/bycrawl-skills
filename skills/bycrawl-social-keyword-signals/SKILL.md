@@ -5,6 +5,9 @@ description: >
   Use when user says "social keyword signals", "trending keywords from social",
   "pre-search signals", "keyword trends from reddit", "what's trending before google",
   "social SEO signals", "keyword discovery from social", "社群關鍵字", "搜尋趨勢預測".
+allowed-tools: ["mcp_bycrawl_*"]
+user-invocable: true
+argument-hint: "<seed_keyword> [region] e.g. AI coding tools, US/en"
 ---
 
 # Social Keyword Signals
@@ -22,6 +25,16 @@ Mines social platforms (Reddit, X, Threads, TikTok, YouTube) for emerging terms,
 - **Seed keyword or niche** (required): The topic area to monitor — e.g., "AI coding tools", "膠原蛋白", "home gym equipment"
 - **Region/language** (optional): Market focus (e.g., "Taiwan/zh-TW", "US/en")
 - **Competitor keywords** (optional): Terms competitors rank for that you want to track socially
+
+
+## Prerequisites
+
+- **ByCrawl MCP server** must be installed and configured. If MCP tools are not available, install with:
+  ```
+  npx @anthropic-ai/claude-code mcp add bycrawl -- npx @bycrawl/mcp
+  ```
+- **ByCrawl API key** set as environment variable: `export BYCRAWL_API_KEY=sk_byc_...`
+- Get your API key at [bycrawl.com](https://bycrawl.com)
 
 ## Workflow
 
@@ -203,3 +216,17 @@ Questions people are asking = search queries waiting to happen:
 3. **Monitor**: {keyword} — emerging but not confirmed yet
 4. **Ignore**: {keyword} — declining socially, likely saturated in search
 ```
+
+## Error Handling
+
+- If a platform returns **empty results**, skip it and note "No data found on {platform}" in the report — do not fail the entire workflow.
+- If the **API key is missing or invalid**, stop and instruct the user: set `BYCRAWL_API_KEY` environment variable with a valid key from [bycrawl.com](https://bycrawl.com).
+- If a **rate limit** is hit, reduce `count` parameters by half and retry once.
+- If a specific **MCP tool is unavailable**, check that the ByCrawl MCP server is installed (`npx @bycrawl/mcp`).
+- **Always deliver partial results** rather than failing entirely — a report covering 5 of 7 platforms is still valuable.
+
+## Estimated API Usage
+
+- **Basic run**: ~20-25 API calls
+- **Full run**: ~35-45 with trend velocity and competitor gaps API calls
+- Each API call consumes 1 ByCrawl credit. Reduce `count` parameters for cost-sensitive usage.
