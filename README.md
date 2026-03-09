@@ -37,6 +37,32 @@ Claude Code skills for ByCrawl — social media intelligence, brand monitoring, 
 npx skills add Signalsurf-ai/bycrawl-skills
 ```
 
+## MCP Setup (required for FB Marketplace)
+
+The `bycrawl-fb-marketplace` skill uses the ByCrawl MCP server. Configure it before use:
+
+```bash
+claude mcp add bycrawl -- npx -y @bycrawl/mcp
+```
+
+Or add to your `.claude/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "bycrawl": {
+      "command": "npx",
+      "args": ["-y", "@bycrawl/mcp"],
+      "env": {
+        "BYCRAWL_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+Get your API key at [bycrawl.com](https://bycrawl.com).
+
 ## Usage
 
 ```

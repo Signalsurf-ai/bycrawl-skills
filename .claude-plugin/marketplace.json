@@ -9,7 +9,8 @@
       "source": "./",
       "description": "Fetch the latest ByCrawl API documentation from bycrawl.com.",
       "skills": [
-        "./skills/bycrawl-docs"
+        "./skills/bycrawl-docs",
+        "./skills/bycrawl-fb-marketplace"
       ]
     }
   ]
