@@ -6,6 +6,9 @@ description: >
   "cold email for acquisition", "M&A outreach", "reach out to this owner",
   "write a letter of intent intro", "deal outreach", "personalized acquisition email",
   "customize outreach for [company owner]".
+allowed-tools: ["mcp_bycrawl_*"]
+user-invocable: true
+argument-hint: "<owner_name> <company_name> [channel] e.g. John Smith, Smith HVAC, email"
 ---
 
 # Deal Outreach Personalization
@@ -26,6 +29,16 @@ Researches a specific business owner across social platforms to find personal in
 - **Owner LinkedIn or X handle** (optional): Speeds up research
 - **Buyer context** (optional): Who the buyer is and why they're interested
 - **Outreach channel** (optional): "email", "LinkedIn DM", "letter", or "all"
+
+
+## Prerequisites
+
+- **ByCrawl MCP server** must be installed and configured. If MCP tools are not available, install with:
+  ```
+  npx @anthropic-ai/claude-code mcp add bycrawl -- npx @bycrawl/mcp
+  ```
+- **ByCrawl API key** set as environment variable: `export BYCRAWL_API_KEY=sk_byc_...`
+- Get your API key at [bycrawl.com](https://bycrawl.com)
 
 ## Workflow
 
@@ -188,3 +201,17 @@ Draft 2-3 follow-ups spaced appropriately:
 - **Tone calibration**: {specific guidance based on their style}
 - **If they've complained about cold outreach**: {adjusted approach}
 ```
+
+## Error Handling
+
+- If a platform returns **empty results**, skip it and note "No data found on {platform}" in the report — do not fail the entire workflow.
+- If the **API key is missing or invalid**, stop and instruct the user: set `BYCRAWL_API_KEY` environment variable with a valid key from [bycrawl.com](https://bycrawl.com).
+- If a **rate limit** is hit, reduce `count` parameters by half and retry once.
+- If a specific **MCP tool is unavailable**, check that the ByCrawl MCP server is installed (`npx @bycrawl/mcp`).
+- **Always deliver partial results** rather than failing entirely — a report covering 5 of 7 platforms is still valuable.
+
+## Estimated API Usage
+
+- **Basic run**: ~15-20 API calls
+- **Full run**: ~25-30 with follow-up sequence research API calls
+- Each API call consumes 1 ByCrawl credit. Reduce `count` parameters for cost-sensitive usage.

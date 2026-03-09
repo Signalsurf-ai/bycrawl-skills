@@ -5,6 +5,9 @@ description: >
   Use when user says "research this person", "build a dossier", "who is [person]",
   "tell me about [person]", "prep for a meeting with [person]",
   "learn about [company]", "pre-call research", "meeting prep".
+allowed-tools: ["mcp_bycrawl_*"]
+user-invocable: true
+argument-hint: "<person_name_or_handle> [company] e.g. johndoe Acme Corp"
 ---
 
 # Prospect Dossier
@@ -22,6 +25,16 @@ Creates a comprehensive profile by pulling someone's presence across LinkedIn, X
 - **Person's name or handle** (required)
 - **Company** (optional, helps with LinkedIn matching)
 - **Meeting context** (optional): "sales call", "partnership", "investor meeting"
+
+
+## Prerequisites
+
+- **ByCrawl MCP server** must be installed and configured. If MCP tools are not available, install with:
+  ```
+  npx @anthropic-ai/claude-code mcp add bycrawl -- npx @bycrawl/mcp
+  ```
+- **ByCrawl API key** set as environment variable: `export BYCRAWL_API_KEY=sk_byc_...`
+- Get your API key at [bycrawl.com](https://bycrawl.com)
 
 ## Workflow
 
@@ -117,3 +130,17 @@ Find: podcast appearances, conference talks, interviews, press mentions.
 - {topics they seem negative about}
 - {competitors they praise — don't bash them}
 ```
+
+## Error Handling
+
+- If a platform returns **empty results**, skip it and note "No data found on {platform}" in the report — do not fail the entire workflow.
+- If the **API key is missing or invalid**, stop and instruct the user: set `BYCRAWL_API_KEY` environment variable with a valid key from [bycrawl.com](https://bycrawl.com).
+- If a **rate limit** is hit, reduce `count` parameters by half and retry once.
+- If a specific **MCP tool is unavailable**, check that the ByCrawl MCP server is installed (`npx @bycrawl/mcp`).
+- **Always deliver partial results** rather than failing entirely — a report covering 5 of 7 platforms is still valuable.
+
+## Estimated API Usage
+
+- **Basic run**: ~15-20 API calls
+- **Full run**: ~25-30 with media and company context API calls
+- Each API call consumes 1 ByCrawl credit. Reduce `count` parameters for cost-sensitive usage.

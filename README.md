@@ -21,6 +21,9 @@ Claude Code skills for ByCrawl — social media intelligence, brand monitoring, 
 | bycrawl-company-sourcing | `/bycrawl-company-sourcing` | Find acquisition targets matching a thesis |
 | bycrawl-acquisition-target-qualify | `/bycrawl-acquisition-target-qualify` | Deep qualification of a company for M&A |
 | bycrawl-deal-outreach-personalize | `/bycrawl-deal-outreach-personalize` | Personalized M&A outreach to business owners |
+| bycrawl-audience-enrichment | `/bycrawl-audience-enrichment` | Enrich ad audiences with social behavior signals |
+| bycrawl-social-keyword-signals | `/bycrawl-social-keyword-signals` | Surface trending keywords before they hit search tools |
+| bycrawl-copy-intelligence | `/bycrawl-copy-intelligence` | Mine social for copy angles and audience language |
 
 ## Installation
 
@@ -89,6 +92,10 @@ Get your API key at [bycrawl.com](https://bycrawl.com).
 /bycrawl-company-sourcing
 /bycrawl-acquisition-target-qualify
 /bycrawl-deal-outreach-personalize
+
+/bycrawl-audience-enrichment
+/bycrawl-social-keyword-signals
+/bycrawl-copy-intelligence
 ```
 
 The skill auto-triggers when Claude detects you're working with the ByCrawl API.
@@ -129,6 +136,12 @@ bycrawl-skills/
     │   └── SKILL.md
     ├── bycrawl-acquisition-target-qualify/
     │   └── SKILL.md
-    └── bycrawl-deal-outreach-personalize/
+    ├── bycrawl-deal-outreach-personalize/
+    │   └── SKILL.md
+    ├── bycrawl-audience-enrichment/
+    │   └── SKILL.md
+    ├── bycrawl-social-keyword-signals/
+    │   └── SKILL.md
+    └── bycrawl-copy-intelligence/
         └── SKILL.md
 ```

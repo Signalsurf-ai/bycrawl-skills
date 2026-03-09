@@ -1,7 +1,7 @@
 {
   "name": "bycrawl",
-  "description": "Fetch the latest ByCrawl API documentation. Gives Claude Code real-time access to bycrawl.com docs for API endpoints, Python SDK, and platform references.",
-  "version": "1.0.0",
+  "description": "Social media intelligence skills for ByCrawl — brand monitoring, competitor analysis, influencer discovery, lead intel, and more using the ByCrawl MCP and API.",
+  "version": "1.1.0",
   "author": {
     "name": "Signalsurf-ai"
   },
@@ -9,13 +9,33 @@
   "license": "MIT",
   "skills": [
     "./skills/bycrawl-docs",
-    "./skills/bycrawl-fb-marketplace"
+    "./skills/bycrawl-fb-marketplace",
+    "./skills/bycrawl-brand-monitoring",
+    "./skills/bycrawl-competitor-intel",
+    "./skills/bycrawl-influencer-discovery",
+    "./skills/bycrawl-content-research",
+    "./skills/bycrawl-lead-intel",
+    "./skills/bycrawl-crisis-detection",
+    "./skills/bycrawl-market-research",
+    "./skills/bycrawl-talent-sourcing",
+    "./skills/bycrawl-prospect-dossier",
+    "./skills/bycrawl-viral-reverse-engineer",
+    "./skills/bycrawl-company-sourcing",
+    "./skills/bycrawl-acquisition-target-qualify",
+    "./skills/bycrawl-deal-outreach-personalize",
+    "./skills/bycrawl-audience-enrichment",
+    "./skills/bycrawl-social-keyword-signals",
+    "./skills/bycrawl-copy-intelligence"
   ],
   "keywords": [
     "bycrawl",
     "social-media",
     "api",
     "documentation",
-    "scraping"
+    "scraping",
+    "brand-monitoring",
+    "influencer",
+    "competitor-intel",
+    "mcp"
   ]
 }
