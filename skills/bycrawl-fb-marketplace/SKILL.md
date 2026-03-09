@@ -1,19 +1,47 @@
 ---
 name: bycrawl-fb-marketplace
-description: "Search and analyze any product on Facebook Marketplace. Find deals, compare prices, and get market trends for electronics, furniture, vehicles, clothing, and more using ByCrawl API."
-allowed-tools: ["Bash", "WebFetch"]
+description: "Search and analyze any product on Facebook Marketplace. Find deals, compare prices, and get market trends for electronics, furniture, vehicles, clothing, and more using ByCrawl MCP."
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<keyword> [location] e.g. 'iPhone 15 new-york', 'IKEA desk taipei', 'Toyota Corolla'"
 ---
 
 # FB Marketplace Scout
 
-Search Facebook Marketplace for any product, analyze pricing trends, and find underpriced deals.
+Search Facebook Marketplace for any product, analyze pricing trends, and find underpriced deals — powered by the ByCrawl MCP server.
 
 ## Prerequisites
 
-- ByCrawl API key set as `BYCRAWL_API_KEY` environment variable
-- Base API URL: `https://api.bycrawl.com`
+This skill requires the **ByCrawl MCP server** to be configured in Claude Code.
+
+### Configure MCP
+
+Add the ByCrawl MCP server to your project settings (`.claude/settings.json`) or user settings (`~/.claude/settings.json`):
+
+```json
+{
+  "mcpServers": {
+    "bycrawl": {
+      "command": "npx",
+      "args": ["-y", "@bycrawl/mcp"],
+      "env": {
+        "BYCRAWL_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+Or configure via the Claude Code CLI:
+
+```bash
+claude mcp add bycrawl -- npx -y @bycrawl/mcp
+```
+
+Then set your API key in the environment or in the MCP server config above.
+
+- Get your API key at: https://bycrawl.com
+- MCP package: `@bycrawl/mcp`
 
 ## Workflow
 
@@ -37,12 +65,11 @@ If `$ARGUMENTS` is empty, browse general trending listings.
 
 ### 2. Search FB Marketplace
 
-Use `Bash` to call the ByCrawl API:
+Use the ByCrawl MCP tool to search Facebook Marketplace:
 
-```bash
-curl -s "https://api.bycrawl.com/facebook/marketplace/search?q={keyword}&location={location}" \
-  -H "x-api-key: $BYCRAWL_API_KEY" | python3 -m json.tool
-```
+- Call `mcp__bycrawl__facebook_marketplace_search` with parameters:
+  - `q`: the search keyword
+  - `location`: user-specified city (default: `taipei`)
 
 > If the user did not specify a location, omit the `&location=` parameter entirely.
 
@@ -63,10 +90,8 @@ From the search results, extract and organize:
 
 If there are promising deals (significantly below median price), fetch full details:
 
-```bash
-curl -s "https://api.bycrawl.com/facebook/marketplace/items/{listing_id}" \
-  -H "x-api-key: $BYCRAWL_API_KEY" | python3 -m json.tool
-```
+- Call `mcp__bycrawl__facebook_marketplace_item` with parameters:
+  - `listing_id`: the ID of the listing to fetch
 
 Check for:
 - Seller info and credibility
@@ -78,14 +103,9 @@ Check for:
 
 If the user wants to browse a category or general trends:
 
-```bash
-curl -s "https://api.bycrawl.com/facebook/marketplace/listings?location={location}" \
-  -H "x-api-key: $BYCRAWL_API_KEY" | python3 -m json.tool
-```
-
-> If no location was specified, omit the `?location=` parameter.
-
-Optional category filter if the user specifies one (e.g. electronics, furniture, vehicles, apparel).
+- Call `mcp__bycrawl__facebook_marketplace_listings` with parameters:
+  - `location`: user-specified city (default: `taipei`)
+  - `category`: optional category filter (e.g. electronics, furniture, vehicles, apparel)
 
 ## Output Format
 
