@@ -27,6 +27,8 @@ Claude Code skills for ByCrawl — social media intelligence, brand monitoring, 
 | bycrawl-bag-product-trendy-research | `/bycrawl-bag-product-trendy-research` | McKinsey-grade product trend intelligence report |
 | bycrawl-trend-visual-evidence | `/bycrawl-trend-visual-evidence` | Google Trends graphs & retail screenshots for trend decks |
 | bycrawl-neighborhood-intel | `/bycrawl-neighborhood-intel` | Rental/lease sourcing + neighborhood intelligence from social data |
+| content-production | `/content-production` | Full content pipeline — topic to publish-ready blog post |
+| bycrawl-seo-blog-production | `/bycrawl-seo-blog-production` | SEO blog production with optional bycrawl social enrichment at each phase |
 
 ## Skill Chains — Recommended Workflows
 
@@ -167,6 +169,34 @@ Skills are modular — use them standalone or chain them together for deeper wor
 
 ---
 
+### For SEO Blog Content Production
+
+> "I need to write a blog post that ranks — backed by real social data."
+
+**Option A: Full bycrawl-enriched pipeline (one command):**
+```bash
+/bycrawl-seo-blog-production AI coding tools, best AI code editors, developers
+```
+
+**Option B: Manual chain for more control (run in order):**
+```bash
+/bycrawl-content-research AI coding tools
+/bycrawl-social-keyword-signals AI coding tools
+/bycrawl-copy-intelligence AI coding tools, developers
+/content-production
+```
+
+| Step | Skill | What it adds |
+|------|-------|-------------|
+| 1 | `/bycrawl-content-research` | Content gaps, audience questions, and trending topics from social |
+| 2 | `/bycrawl-social-keyword-signals` | Emerging keywords from social before they hit Ahrefs/Semrush |
+| 3 | `/bycrawl-copy-intelligence` | Audience language, proven hooks, and emotional triggers |
+| 4 | `/content-production` | Full draft with SEO optimization, meta tags, and publish checklist |
+
+> `/bycrawl-seo-blog-production` wraps all of this into one skill with opt-in bycrawl enrichment at each phase (Research, Draft, Optimize). Say "no" at any phase to skip social data and use the standard content-production process.
+
+---
+
 ### For Real Estate & PropTech (Alleyguide-style)
 
 > "I need to find available rentals AND know what it's actually like to live there."
@@ -210,6 +240,31 @@ Skills are modular — use them standalone or chain them together for deeper wor
 ```bash
 npx skills add Signalsurf-ai/bycrawl-skills
 ```
+
+## Updating
+
+### Via Plugin Marketplace
+
+```shell
+/plugin marketplace update bycrawl@bycrawl-skills
+```
+
+### Via npx skills
+
+```bash
+npx skills update Signalsurf-ai/bycrawl-skills
+```
+
+### Manual update
+
+If you installed by cloning the repo, pull the latest changes:
+
+```bash
+cd ~/.claude/skills/bycrawl-skills  # or wherever you cloned
+git pull origin main
+```
+
+After updating, restart Claude Code to pick up the new skills.
 
 ## MCP Setup
 
@@ -282,6 +337,9 @@ claude mcp add playwright -- npx -y @anthropic-ai/mcp-playwright
 /bycrawl-neighborhood-intel Da'an District, Taipei
 /bycrawl-neighborhood-intel Yongkang Street, Taipei, young couple
 /bycrawl-neighborhood-intel Banqiao, New Taipei, family with kids
+
+/content-production
+/bycrawl-seo-blog-production AI coding tools, best AI code editors, developers
 ```
 
 The skill auto-triggers when Claude detects you're working with the ByCrawl API.
@@ -334,6 +392,15 @@ bycrawl-skills/
     │   └── SKILL.md
     ├── bycrawl-trend-visual-evidence/
     │   └── SKILL.md
-    └── bycrawl-neighborhood-intel/
+    ├── bycrawl-neighborhood-intel/
+    │   └── SKILL.md
+    ├── content-production/
+    │   ├── SKILL.md
+    │   ├── templates/
+    │   │   └── content-brief-template.md
+    │   └── references/
+    │       ├── content-brief-guide.md
+    │       └── optimization-checklist.md
+    └── bycrawl-seo-blog-production/
         └── SKILL.md
 ```
