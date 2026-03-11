@@ -211,6 +211,31 @@ Skills are modular — use them standalone or chain them together for deeper wor
 npx skills add Signalsurf-ai/bycrawl-skills
 ```
 
+## Updating
+
+### Via Plugin Marketplace
+
+```shell
+/plugin marketplace update bycrawl@bycrawl-skills
+```
+
+### Via npx skills
+
+```bash
+npx skills update Signalsurf-ai/bycrawl-skills
+```
+
+### Manual update
+
+If you installed by cloning the repo, pull the latest changes:
+
+```bash
+cd ~/.claude/skills/bycrawl-skills  # or wherever you cloned
+git pull origin main
+```
+
+After updating, restart Claude Code to pick up the new skills.
+
 ## MCP Setup
 
 ### ByCrawl MCP (required for all skills)
