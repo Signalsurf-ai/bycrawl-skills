@@ -29,7 +29,9 @@
         "./skills/bycrawl-copy-intelligence",
         "./skills/bycrawl-bag-product-trendy-research",
         "./skills/bycrawl-trend-visual-evidence",
-        "./skills/bycrawl-neighborhood-intel"
+        "./skills/bycrawl-neighborhood-intel",
+        "./skills/content-production",
+        "./skills/bycrawl-seo-blog-production"
       ]
     }
   ]
