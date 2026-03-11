@@ -5,6 +5,8 @@ description: >
   Use when user says "write a post about", "draft an article", "create content for",
   "help me write", "I need a blog post", "content production", "write a guide".
   NOT for content strategy or calendar planning. NOT for social captions only.
+user-invocable: true
+argument-hint: "<topic> [keyword] [audience] [length] e.g. email marketing for B2B SaaS, best email tools, marketers, 2000 words"
 license: MIT
 metadata:
   version: 1.0.0

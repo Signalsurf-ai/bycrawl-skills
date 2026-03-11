@@ -6,7 +6,7 @@ description: >
   "social-powered blog post", "blog production with social research",
   "write an SEO article using social signals", "bycrawl blog", "SEO content production".
   Wraps content-production with optional bycrawl enrichment at each phase.
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<topic> [keyword] [audience] e.g. AI coding tools, best AI code editors, developers"
 ---
