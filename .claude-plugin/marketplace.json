@@ -26,7 +26,10 @@
         "./skills/bycrawl-deal-outreach-personalize",
         "./skills/bycrawl-audience-enrichment",
         "./skills/bycrawl-social-keyword-signals",
-        "./skills/bycrawl-copy-intelligence"
+        "./skills/bycrawl-copy-intelligence",
+        "./skills/bycrawl-bag-product-trendy-research",
+        "./skills/bycrawl-trend-visual-evidence",
+        "./skills/bycrawl-neighborhood-intel"
       ]
     }
   ]
