@@ -5,7 +5,7 @@ description: >
   Use when user says "research this lead", "qualify this prospect", "find leads",
   "lead intelligence", "prospect research", "who is buying [product type]",
   "find people looking for [solution]", "buying signals".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<solution_or_prospect> [company] e.g. CRM software OR john_doe Acme Inc"
 ---

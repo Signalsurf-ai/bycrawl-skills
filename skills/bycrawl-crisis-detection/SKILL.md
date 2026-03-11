@@ -5,7 +5,7 @@ description: >
   Use when user says "crisis monitoring", "reputation check", "are people complaining",
   "negative mentions", "PR crisis", "damage control", "reputation management",
   "check for complaints about [brand]", "brand safety check".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*", "WebFetch", "WebSearch"]
 user-invocable: true
 argument-hint: "<brand_name> [known_issue] e.g. Tesla, battery recall"
 ---

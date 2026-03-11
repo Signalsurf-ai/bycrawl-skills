@@ -5,7 +5,7 @@ description: >
   Use when user says "competitor analysis", "competitive intelligence", "competitor audit",
   "what is [company] doing", "spy on competitor", "competitor social strategy",
   "competitor hiring", "share of voice".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*", "WebFetch", "WebSearch"]
 user-invocable: true
 argument-hint: "<competitor_name> [your_brand] e.g. Stripe, our brand: Paddle"
 ---

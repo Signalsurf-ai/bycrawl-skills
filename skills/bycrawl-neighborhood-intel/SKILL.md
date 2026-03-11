@@ -11,7 +11,7 @@ description: >
   "what's it like living in [area]", "neighborhood report for [location]",
   "rental listings from social", "off-platform rentals", "find places to rent".
   Built for real estate platforms, property tech, and location intelligence partners.
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<neighborhood_or_address> [city] e.g. Da'an District, Taipei"
 ---

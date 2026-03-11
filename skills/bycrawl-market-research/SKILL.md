@@ -5,7 +5,7 @@ description: >
   Use when user says "market research", "product-market fit", "validate my idea",
   "is there demand for", "what do people think about [category]",
   "market sentiment", "TAM research from social", "customer discovery".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*", "WebFetch", "WebSearch"]
 user-invocable: true
 argument-hint: "<product_or_category> [target_audience] e.g. AI writing tool, content marketers"
 ---

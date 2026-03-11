@@ -5,7 +5,7 @@ description: >
   Use when user says "why did this go viral", "reverse engineer this post",
   "analyze this viral content", "what makes content go viral in [niche]",
   "viral content analysis", "deconstruct this post", "replicate viral content".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<post_url_or_topic> [niche] e.g. https://x.com/... OR AI tools"
 ---

@@ -5,7 +5,7 @@ description: >
   Use when user says "copy research", "what copy works", "find copy angles",
   "audience language research", "social copy mining", "copywriting research",
   "what messaging resonates", "find hooks for [topic]", "文案靈感", "社群文案分析".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<topic_or_product> [audience] [copy_type] e.g. protein powder, fitness enthusiasts, ad copy"
 ---

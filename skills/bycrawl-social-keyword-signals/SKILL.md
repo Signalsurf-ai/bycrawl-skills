@@ -5,7 +5,7 @@ description: >
   Use when user says "social keyword signals", "trending keywords from social",
   "pre-search signals", "keyword trends from reddit", "what's trending before google",
   "social SEO signals", "keyword discovery from social", "社群關鍵字", "搜尋趨勢預測".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*", "WebFetch", "WebSearch"]
 user-invocable: true
 argument-hint: "<seed_keyword> [region] e.g. AI coding tools, US/en"
 ---

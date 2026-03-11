@@ -5,7 +5,7 @@ description: >
   Use when user says "find candidates", "talent sourcing", "recruiting research",
   "who is hiring for [role]", "find engineers", "find developers",
   "employer brand check", "hiring intelligence", "talent market".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<role_or_skill> [location] e.g. senior backend engineer, San Francisco"
 ---
