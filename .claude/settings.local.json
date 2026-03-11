@@ -20,7 +20,8 @@
       "mcp__bycrawl__tiktok_get_user",
       "mcp__bycrawl__facebook_get_page",
       "mcp__bycrawl__facebook_marketplace_search",
-      "mcp__bycrawl__dcard_search_posts"
+      "mcp__bycrawl__dcard_search_posts",
+      
     ]
   },
   "enableAllProjectMcpServers": true,
