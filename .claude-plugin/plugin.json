@@ -30,7 +30,9 @@
     "./skills/bycrawl-trend-visual-evidence",
     "./skills/bycrawl-neighborhood-intel",
     "./skills/content-production",
-    "./skills/bycrawl-seo-blog-production"
+    "./skills/bycrawl-seo-blog-production",
+    "./skills/bycrawl-blog-geo",
+    "./skills/bycrawl-seo-geo"
   ],
   "keywords": [
     "bycrawl",

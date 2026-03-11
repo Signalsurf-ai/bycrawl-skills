@@ -5,7 +5,7 @@ description: >
   Use when user says "find influencers", "influencer discovery", "creator outreach",
   "find creators", "influencer marketing", "KOL research", "find brand ambassadors",
   "who is talking about [topic]".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<niche_or_topic> [platform] [follower_range] e.g. skincare, TikTok, micro"
 ---

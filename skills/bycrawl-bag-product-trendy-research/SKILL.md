@@ -7,7 +7,7 @@ description: >
   "what are customers buying", "trending backpack styles", "bag trends", "fashion product trends",
   "market trend report", "trend intelligence for [category]", "what's hot in [product category]".
   Also triggers for any fashion/accessories/bag/luggage/backpack trend queries.
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<product_category> [target_market] e.g. backpacks, Gen Z commuters"
 ---

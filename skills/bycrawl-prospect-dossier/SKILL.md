@@ -5,7 +5,7 @@ description: >
   Use when user says "research this person", "build a dossier", "who is [person]",
   "tell me about [person]", "prep for a meeting with [person]",
   "learn about [company]", "pre-call research", "meeting prep".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<person_name_or_handle> [company] e.g. johndoe Acme Corp"
 ---

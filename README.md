@@ -29,6 +29,8 @@ Claude Code skills for ByCrawl — social media intelligence, brand monitoring, 
 | bycrawl-neighborhood-intel | `/bycrawl-neighborhood-intel` | Rental/lease sourcing + neighborhood intelligence from social data |
 | content-production | `/content-production` | Full content pipeline — topic to publish-ready blog post |
 | bycrawl-seo-blog-production | `/bycrawl-seo-blog-production` | SEO blog production with optional bycrawl social enrichment at each phase |
+| bycrawl-blog-geo | `/bycrawl-blog-geo` | AI citation optimization audit with bycrawl social intelligence enrichment |
+| bycrawl-seo-geo | `/bycrawl-seo-geo` | GEO analysis with live brand mention measurement across YouTube, Reddit, X, LinkedIn |
 
 ## Skill Chains — Recommended Workflows
 
@@ -197,6 +199,37 @@ Skills are modular — use them standalone or chain them together for deeper wor
 
 ---
 
+### For AI Citation Optimization (GEO)
+
+> "I need my content to get cited by ChatGPT, Perplexity, and Google AI Overviews."
+
+**Site/page-level GEO analysis (brand mention measurement):**
+```bash
+/bycrawl-seo-geo https://example.com/blog/post, Acme Inc, AI coding tools
+```
+
+**Blog-post-level citation audit (passage scoring + capsule generation):**
+```bash
+/bycrawl-blog-geo ./blog/ai-coding-tools.md
+```
+
+**Full chain for maximum coverage:**
+```bash
+/bycrawl-seo-geo https://example.com/blog/post, Acme Inc, AI coding tools
+/bycrawl-blog-geo ./blog/ai-coding-tools.md
+/bycrawl-content-research AI coding tools
+```
+
+| Step | Skill | What it adds |
+|------|-------|-------------|
+| 1 | `/bycrawl-seo-geo` | GEO Readiness score, brand mention audit across YouTube/Reddit/X/LinkedIn, share-of-voice vs competitors |
+| 2 | `/bycrawl-blog-geo` | Passage-level AI Citation Readiness score, citation capsule generation backed by social data |
+| 3 | `/bycrawl-content-research` | Content gaps and trending topics to create new citable content around |
+
+> **`bycrawl-seo-geo`** is the strategic layer — it measures your actual brand mention signals (the #1 predictor of AI citations) and benchmarks you against competitors. **`bycrawl-blog-geo`** is the tactical layer — it scores individual posts for citability and generates citation capsules. Use both for the full picture.
+
+---
+
 ### For Real Estate & PropTech (Alleyguide-style)
 
 > "I need to find available rentals AND know what it's actually like to live there."
@@ -340,6 +373,10 @@ claude mcp add playwright -- npx -y @anthropic-ai/mcp-playwright
 
 /content-production
 /bycrawl-seo-blog-production AI coding tools, best AI code editors, developers
+
+/bycrawl-blog-geo ./blog/ai-coding-tools.md
+
+/bycrawl-seo-geo https://example.com/blog/post, Acme Inc, AI coding tools
 ```
 
 The skill auto-triggers when Claude detects you're working with the ByCrawl API.
@@ -401,6 +438,10 @@ bycrawl-skills/
     │   └── references/
     │       ├── content-brief-guide.md
     │       └── optimization-checklist.md
-    └── bycrawl-seo-blog-production/
+    ├── bycrawl-seo-blog-production/
+    │   └── SKILL.md
+    ├── bycrawl-blog-geo/
+    │   └── SKILL.md
+    └── bycrawl-seo-geo/
         └── SKILL.md
 ```

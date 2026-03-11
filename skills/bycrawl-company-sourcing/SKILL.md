@@ -6,7 +6,7 @@ description: >
   "deal sourcing", "find businesses in [industry]", "proprietary sourcing",
   "find owner-operated businesses", "search for companies matching [thesis]",
   "PE sourcing", "M&A sourcing", "search fund sourcing".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<industry_or_thesis> [geography] [size] e.g. HVAC services, Texas, 10-100 employees"
 ---

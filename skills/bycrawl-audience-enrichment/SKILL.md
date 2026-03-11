@@ -5,7 +5,7 @@ description: >
   Use when user says "enrich audience", "audience intelligence", "social signals for targeting",
   "behavior enrichment", "audience profiling", "interest signals", "social audience data",
   "what is my audience doing on social", "real-time audience insights", "受眾分析", "社群行為".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<audience_definition> [region] e.g. Tesla owners, US"
 ---

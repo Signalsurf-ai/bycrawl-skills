@@ -4,7 +4,7 @@ description: >
   Cross-platform brand mention monitoring and sentiment analysis using bycrawl MCP.
   Use when user says "monitor brand", "brand mentions", "track mentions", "social listening",
   "brand monitoring", "what are people saying about", "track our brand", "mention tracking".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*", "WebFetch", "WebSearch"]
 user-invocable: true
 argument-hint: "<brand_name> [competitor1, competitor2] e.g. Nike, Adidas Puma"
 ---

@@ -7,7 +7,7 @@ description: >
   Use when user says "get visual evidence", "screenshot trends", "trend visuals",
   "make it presentation ready", "add charts to trend report", "Google Trends for [category]",
   "screenshot product pages", "visual proof for trends".
-allowed-tools: ["mcp_playwright_*", "mcp_bycrawl_*"]
+allowed-tools: ["mcp__playwright__*", "mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<product_category> [styles_to_compare] e.g. backpacks, gorpcore vs quiet luxury"
 ---

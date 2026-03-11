@@ -5,7 +5,7 @@ description: >
   Use when user says "content ideas", "content research", "what should I post about",
   "content gap", "trending topics", "video ideas", "blog ideas from social",
   "what questions are people asking about [topic]".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*", "WebFetch", "WebSearch"]
 user-invocable: true
 argument-hint: "<topic> [format] e.g. AI coding tools, video"
 ---

@@ -6,7 +6,7 @@ description: >
   "cold email for acquisition", "M&A outreach", "reach out to this owner",
   "write a letter of intent intro", "deal outreach", "personalized acquisition email",
   "customize outreach for [company owner]".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<owner_name> <company_name> [channel] e.g. John Smith, Smith HVAC, email"
 ---

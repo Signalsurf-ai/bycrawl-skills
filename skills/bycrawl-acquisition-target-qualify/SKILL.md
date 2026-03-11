@@ -6,7 +6,7 @@ description: >
   "due diligence on [company]", "evaluate [company] for acquisition",
   "assess [company] as a target", "deep dive on [company] for M&A",
   "should we pursue [company]", "acquisition qualification".
-allowed-tools: ["mcp_bycrawl_*"]
+allowed-tools: ["mcp__bycrawl__*"]
 user-invocable: true
 argument-hint: "<company_name> [owner_name] e.g. Smith HVAC, John Smith"
 ---
