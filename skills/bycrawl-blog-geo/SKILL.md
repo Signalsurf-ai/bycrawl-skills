@@ -5,7 +5,7 @@ description: >
   Scores blog posts for ChatGPT, Perplexity, and Google AI Overview citability.
   Use when user says "geo audit", "ai citation audit", "ai optimization",
   "citation audit with social data", "aeo", "perplexity optimization",
-  "chatgpt citation", "bycrawl geo", "blog geo audit".
+  "chatgpt citation", "blog geo", "post geo audit", "blog citation audit".
   Enhances the standard GEO audit with live social signals for citation capsule
   generation and competitor citation analysis.
 allowed-tools:
@@ -14,6 +14,7 @@ allowed-tools:
   - Grep
   - Glob
   - WebFetch
+  - WebSearch
   - "mcp__bycrawl__*"
 user-invocable: true
 argument-hint: "<blog-file-or-url> e.g. ./blog/ai-coding-tools.md"

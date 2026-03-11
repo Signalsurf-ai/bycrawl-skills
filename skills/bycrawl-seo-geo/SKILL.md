@@ -7,13 +7,14 @@ description: >
   X, LinkedIn, Instagram, TikTok — the signals that correlate 3x more with
   AI visibility than backlinks. Use when user says "AI Overviews", "SGE",
   "GEO", "AI search", "LLM optimization", "Perplexity", "AI citations",
-  "ChatGPT search", "AI visibility", "bycrawl geo", "geo with social data".
+  "ChatGPT search", "AI visibility", "site geo", "brand geo", "geo with social data".
 allowed-tools:
   - Read
   - Write
   - Grep
   - Glob
   - WebFetch
+  - WebSearch
   - "mcp__bycrawl__*"
 user-invocable: true
 argument-hint: "<url-or-file> [brand] [keywords] e.g. https://example.com/blog/post, Acme Inc, AI coding tools"
