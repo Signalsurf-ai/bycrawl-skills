@@ -1,7 +1,7 @@
 {
   "name": "bycrawl",
   "description": "Social media intelligence skills for ByCrawl — brand monitoring, competitor analysis, influencer discovery, lead intel, and more using the ByCrawl MCP and API.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": {
     "name": "Signalsurf-ai"
   },
@@ -32,7 +32,8 @@
     "./skills/content-production",
     "./skills/bycrawl-seo-blog-production",
     "./skills/bycrawl-blog-geo",
-    "./skills/bycrawl-seo-geo"
+    "./skills/bycrawl-seo-geo",
+    "./skills/bycrawl-linkedin-lead-finder"
   ],
   "keywords": [
     "bycrawl",

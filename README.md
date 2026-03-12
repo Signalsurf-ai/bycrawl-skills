@@ -31,6 +31,7 @@ Claude Code skills for ByCrawl — social media intelligence, brand monitoring, 
 | bycrawl-seo-blog-production | `/bycrawl-seo-blog-production` | SEO blog production with optional bycrawl social enrichment at each phase |
 | bycrawl-blog-geo | `/bycrawl-blog-geo` | AI citation optimization audit with bycrawl social intelligence enrichment |
 | bycrawl-seo-geo | `/bycrawl-seo-geo` | GEO analysis with live brand mention measurement across YouTube, Reddit, X, LinkedIn |
+| bycrawl-linkedin-lead-finder | `/bycrawl-linkedin-lead-finder` | Find and score LinkedIn prospects with cross-platform enrichment |
 
 ## Skill Chains — Recommended Workflows
 
@@ -151,6 +152,25 @@ Skills are modular — use them standalone or chain them together for deeper wor
 | 1 | `/bycrawl-lead-intel` | Find buying signals and research the prospect |
 | 2 | `/bycrawl-prospect-dossier` | Build a complete cross-platform profile |
 | 3 | `/bycrawl-social-keyword-signals` | Surface trending keywords the prospect's industry cares about |
+
+---
+
+### For LinkedIn Lead Generation
+
+> "I need to build a targeted prospect list from LinkedIn."
+
+**Commands** (run in order):
+```bash
+/bycrawl-linkedin-lead-finder VP of Engineering, SaaS, Series A-B
+/bycrawl-prospect-dossier [top prospect name]
+/bycrawl-deal-outreach-personalize [prospect name]
+```
+
+| Step | Skill | What it adds |
+|------|-------|-------------|
+| 1 | `/bycrawl-linkedin-lead-finder` | Scored prospect list with company intel and personalized outreach |
+| 2 | `/bycrawl-prospect-dossier` | Deep cross-platform profile for top leads |
+| 3 | `/bycrawl-deal-outreach-personalize` | Multi-touch outreach sequence |
 
 ---
 
@@ -377,6 +397,9 @@ claude mcp add playwright -- npx -y @anthropic-ai/mcp-playwright
 /bycrawl-blog-geo ./blog/ai-coding-tools.md
 
 /bycrawl-seo-geo https://example.com/blog/post, Acme Inc, AI coding tools
+
+/bycrawl-linkedin-lead-finder VP of Engineering, SaaS
+/bycrawl-linkedin-lead-finder Head of Marketing, fintech, Series A-B, San Francisco, marketing analytics
 ```
 
 The skill auto-triggers when Claude detects you're working with the ByCrawl API.
@@ -404,6 +427,8 @@ bycrawl-skills/
     ├── bycrawl-influencer-discovery/
     │   └── SKILL.md
     ├── bycrawl-lead-intel/
+    │   └── SKILL.md
+    ├── bycrawl-linkedin-lead-finder/
     │   └── SKILL.md
     ├── bycrawl-market-research/
     │   └── SKILL.md
