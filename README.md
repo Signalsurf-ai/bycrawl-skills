@@ -168,9 +168,9 @@ Skills are modular — use them standalone or chain them together for deeper wor
 
 | Step | Skill | What it adds |
 |------|-------|-------------|
-| 1 | `/bycrawl-linkedin-lead-finder` | Scored prospect list with company intel and personalized outreach |
-| 2 | `/bycrawl-prospect-dossier` | Deep cross-platform profile for top leads |
-| 3 | `/bycrawl-deal-outreach-personalize` | Multi-touch outreach sequence |
+| 1 | `/bycrawl-linkedin-lead-finder` | Scored prospect list with company intel and single outreach message per lead |
+| 2 | `/bycrawl-prospect-dossier` | Deeper profile with media mentions, talking points, and meeting prep for top leads |
+| 3 | `/bycrawl-deal-outreach-personalize` | Multi-touch outreach sequence (follow-ups, not just the opener) |
 
 ---
 

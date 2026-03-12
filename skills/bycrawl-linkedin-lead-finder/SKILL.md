@@ -116,6 +116,8 @@ threads_search_users(query="{full_name}", count={mode_count})
 threads_get_user(username="{handle}")
 reddit_search_posts(query="{full_name} OR {company}", count={mode_count})
 instagram_get_user(username="{handle_guess}")
+youtube_search_videos(query="{full_name} {company}", count={mode_count})
+youtube_get_channel(channelId="{channel_id}")
 ```
 
 ### Step 6: Score & Tier
