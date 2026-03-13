@@ -34,7 +34,8 @@
         "./skills/bycrawl-seo-blog-production",
         "./skills/bycrawl-blog-geo",
         "./skills/bycrawl-seo-geo",
-        "./skills/bycrawl-linkedin-lead-finder"
+        "./skills/bycrawl-linkedin-lead-finder",
+        "./skills/humanizer"
       ]
     }
   ]

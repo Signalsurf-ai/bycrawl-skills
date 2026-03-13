@@ -32,6 +32,7 @@ Claude Code skills for ByCrawl — social media intelligence, brand monitoring, 
 | bycrawl-blog-geo | `/bycrawl-blog-geo` | AI citation optimization audit with bycrawl social intelligence enrichment |
 | bycrawl-seo-geo | `/bycrawl-seo-geo` | GEO analysis with live brand mention measurement across YouTube, Reddit, X, LinkedIn |
 | bycrawl-linkedin-lead-finder | `/bycrawl-linkedin-lead-finder` | Find and score LinkedIn prospects with cross-platform enrichment |
+| humanizer | `/humanizer` | Remove AI writing patterns and make text sound human |
 
 ## Skill Chains — Recommended Workflows
 
@@ -400,6 +401,8 @@ claude mcp add playwright -- npx -y @anthropic-ai/mcp-playwright
 
 /bycrawl-linkedin-lead-finder VP of Engineering, SaaS
 /bycrawl-linkedin-lead-finder Head of Marketing, fintech, Series A-B, San Francisco, marketing analytics
+
+/humanizer [paste or point to text to humanize]
 ```
 
 The skill auto-triggers when Claude detects you're working with the ByCrawl API.
@@ -467,6 +470,8 @@ bycrawl-skills/
     │   └── SKILL.md
     ├── bycrawl-blog-geo/
     │   └── SKILL.md
-    └── bycrawl-seo-geo/
+    ├── bycrawl-seo-geo/
+    │   └── SKILL.md
+    └── humanizer/
         └── SKILL.md
 ```
